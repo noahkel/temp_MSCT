@@ -5,6 +5,7 @@ Notation aus dem Arbeitsplan, Abschnitt 1.1:
     S[b,e] = s_b(E[e]) * dE,   shape: (n_bin, n_spec)
     sum_e S[b,e] = 1.
 
+
 Hier sind mu_m Massenschwächungskoeffizienten in cm^2/g.
 Die Materialbilder f enthalten daher Dichten in g/cm^3.
 R enthält Weglängen in cm, Z = R f hat die Einheit g/cm^2.
