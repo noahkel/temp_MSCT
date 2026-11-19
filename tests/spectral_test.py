@@ -5,6 +5,15 @@ from spektralmodell import spectral_model
 
 
 class TestSpectralModel(unittest.TestCase):
+    """
+    Testet das Spektralmodell auf folgende Arten:
+
+        -   Dimensionen stimmen überein
+        -   Normalisierung von S ist korrekt angewandt
+
+    """
+
+
     bins = 3
     materialien = 2  
 
@@ -19,6 +28,3 @@ class TestSpectralModel(unittest.TestCase):
         E,S,M = spectral_model(n_bin=self.bins)
         ones = torch.ones_like(S.sum(dim=1))
         self.assertTrue(torch.equal(S.sum(dim=1), ones))
-
-if __name__ == "__main__":
-    unittest.main()
