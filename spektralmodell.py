@@ -24,7 +24,7 @@ def read_table(filename):
     Path(__file__) sorgt dafür, dass die Daten auch gefunden werden,
     wenn Spyder gerade ein anderes Arbeitsverzeichnis verwendet.
     """
-    path = Path(__file__).resolve().parent / 'data' / filename
+    path = Path(__file__).resolve().parent / 'raw' / filename
     with path.open(encoding='utf-8') as stream:
         rows = list(csv.reader(stream))[1:]  # Erste Zeile: Spaltennamen.
     return torch.tensor([[float(v) for v in row] for row in rows],

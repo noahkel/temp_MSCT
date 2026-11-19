@@ -82,7 +82,7 @@ if __name__ == '__main__':
     # Zwei Materialien (Wasser, Knochen), drei Energiebins
     E, S, M = spectral_model(n_bin=3)
 
-    # Wir betrachten 201 verschiedene Materialsinogramme.
+    # Wir betrachten 201 verschiedene Messungen von Röntgenstrahlen.
     # Wasser wird variiert, Knochen bleibt konstant.
 
     Z = torch.zeros((201, 2), dtype=torch.float64)
@@ -219,7 +219,7 @@ if __name__ == '__main__':
     print(f'Dimension von J:    {tuple(J.shape)}')
 
     # Grenzfälle aus dem Arbeitsplan
-    print(f'Phi(0) = 0:       {torch.allclose(phi(z0, S, M), torch.zeros(3, dtype=torch.float64))}')
+    print(f'Phi(0) = 0:       {torch.allclose(phi(z0, S, M), torch.zeros(S.shape[0], dtype=torch.float64))}')
     print(f'DPhi(0) = S @ M:  {torch.allclose(J0, S @ M)}')
 
     plt.show()
